@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARGUS</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <section class="map-panel">
+        <h1>ARGUS Live Intelligence</h1>
+        <p>Select AOI bounds (lat/lon) and load signals.</p>
+        <form id="bbox-form">
+          <label>Min Lat <input name="minLat" type="number" step="0.0001" value="40.68" /></label>
+          <label>Max Lat <input name="maxLat" type="number" step="0.0001" value="40.82" /></label>
+          <label>Min Lon <input name="minLon" type="number" step="0.0001" value="-74.10" /></label>
+          <label>Max Lon <input name="maxLon" type="number" step="0.0001" value="-73.90" /></label>
+          <button type="submit">Load AOI</button>
+        </form>
+        <pre id="status">Waiting for query...</pre>
+      </section>
+      <aside class="intel-panel">
+        <h2>AOI Situation</h2>
+        <div id="score"></div>
+        <h3>Cameras</h3>
+        <ul id="cameras"></ul>
+        <h3>Events</h3>
+        <ul id="events"></ul>
+      </aside>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

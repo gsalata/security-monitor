@@ -1,0 +1,60 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --card: #121a2a;
+  --line: #23314f;
+  --text: #d0e3ff;
+  --accent: #58a6ff;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #10203d 0%, var(--bg) 55%);
+  color: var(--text);
+}
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: 100vh;
+}
+.map-panel,
+.intel-panel {
+  padding: 1rem 1.25rem;
+}
+.intel-panel {
+  border-left: 1px solid var(--line);
+  background: rgba(9, 14, 24, 0.8);
+}
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+input,
+button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.45rem;
+}
+button {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #2f81f7, #8250df);
+  font-weight: 700;
+}
+pre {
+  margin-top: 0.8rem;
+  white-space: pre-wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #0d1526;
+}
+li { margin-bottom: 0.5rem; }
