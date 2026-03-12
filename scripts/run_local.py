@@ -14,6 +14,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
 FRONTEND_DIR = ROOT / "frontend"
@@ -194,7 +195,11 @@ class ArgusHandler(SimpleHTTPRequestHandler):
 
 
 def main() -> None:
-    port = 8000
+    parser = argparse.ArgumentParser(description="Run ARGUS local stdlib server")
+    parser.add_argument("--port", type=int, default=8000)
+    args = parser.parse_args()
+
+    port = args.port
     server = ThreadingHTTPServer(("0.0.0.0", port), ArgusHandler)
     print(f"ARGUS local runner listening on http://0.0.0.0:{port}")
     server.serve_forever()

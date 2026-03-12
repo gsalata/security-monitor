@@ -16,13 +16,14 @@ This repository contains a runnable MVP implementation of the Watch_Dogs-style l
 ### Option A (recommended here): no dependencies
 
 ```bash
-./scripts/run.sh
+PORT=8000 ./scripts/run.sh
 ```
 
 - If `uvicorn` is installed, this runs FastAPI.
 - If `uvicorn` is missing, it automatically starts `scripts/run_local.py` (stdlib fallback with compatible API routes).
+- You can change the listen port with `PORT=8765 ./scripts/run.sh`.
 
-Open: http://localhost:8000
+Open: `http://localhost:$PORT` (default `8000`).
 
 ### Option B: local Python (FastAPI)
 
